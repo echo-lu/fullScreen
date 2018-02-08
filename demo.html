@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+	<div class="" id="container">
+		<div style="width: 400%;" class="sections">
+			<div class="section left" id="section0">
+				<h3>this is the page</h3>
+			</div>
+			<div class="section left" id="section1">
+				<h3>this is the page</h3>
+			</div>
+			<div class="section left" id="section2">
+				<h3>this is the page</h3>
+			</div>
+			<div class="section left" id="section3">
+				<h3>this is the page</h3>
+			</div>
+		</div>
+	</div>
+	<script src="pageswitch.js"></script>
+	<script>
+		$('#container').PageSwitch({
+			direction:"herizontal"
+		});
+		$('#container').PageSwitch("init");
+	</script>
+	
+</body>
+</html>
