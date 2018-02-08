@@ -2,9 +2,9 @@
 jQuery全屏滚动插件
 
 ### 闭包的作用
-(function($) {
-	// do something
-})(jQuery);
+	(function($) {
+		// do something
+	})(jQuery);
 
 - 避免全局依赖
 - 避免第三方破坏
