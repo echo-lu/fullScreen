@@ -1,35 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Document</title>
-	<link rel="stylesheet" href="demo.css">
+	<meta charset="UTF-8">
+	<title>页面切换</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
 </head>
 <body>
-	<div class="" id="container">
-		<div style="width: 400%;" class="sections">
-			<div class="section left" id="section0">
-				<h3>this is the page</h3>
+	<div id="container" data-PageSwitch>
+		<div class="sections">
+			<div class="section active" id="section0">
+				<div class="intro">
+					<h1 class="title">switchPage</h1>
+					<p>Create Beautiful Fullscreen Scrolling Websites</p>
+				</div>
 			</div>
-			<div class="section left" id="section1">
-				<h3>this is the page</h3>
+			<div class="section" id="section1">
+				<div class="intro">
+					<h1 class="title">Example</h1>
+					<p>HTML markup example to define 4 sections</p>
+					<img src="images/example.png"/>
+				</div>
 			</div>
-			<div class="section left" id="section2">
-				<h3>this is the page</h3>
+			<div class="section" id="section2">
+				<div class="intro">
+					<h1 class="title">Example</h1>
+					<p>The plug-in configuration parameters</p>
+					<img src="images/example2.png"/>
+				</div>
 			</div>
-			<div class="section left" id="section3">
-				<h3>this is the page</h3>
+			<div class="section" id="section3">
+				<div class="intro">
+					<h1 class="title">THE END</h1>
+					<p>Everything will be okay in the end. If it's not okay, it's not the end.</p>
+				</div>
 			</div>
 		</div>
 	</div>
-	<script src="pageswitch.js"></script>
-	<script>
-		$('#container').PageSwitch({
-			direction:"herizontal"
-		});
-		$('#container').PageSwitch("init");
-	</script>
-	
+	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="pageswitch.js"></script>
+	<!--<script type="text/javascript">
+	$("#container").PageSwitch({
+		direction : "horizontal"
+	});
+	</script>-->
 </body>
 </html>
