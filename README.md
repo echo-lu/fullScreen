@@ -44,3 +44,38 @@ jQuery全屏滚动插件
   - 如果实例存在则不再重新创建实例 <br /> 
   - 利用data()来存放插件对象的实例 <br /> 
 
+### 绑定鼠标滚轮事件
+js事件有很多需要兼容的地方，鼠标滚轮事件显然也有额外的差异。包括IE6浏览器在内都适用mouseWheel，而只有火狐浏览器使用DOMMouseScroll。
+$(document).on("mouseWheel DOMMouseScroll",handler); <br />
+### 如何判断鼠标滚轮方向
+其他浏览器通过wheeldalta属性来判断，但是火狐浏览器没有这个属性，可通过detail这个属性来判断 <br />
+开发中发现每次向下滚动时，wheeldalta都是-120，但是detail却是3，火狐浏览器方向判断的数值正负与其他浏览器是相反的。
+### 绑定键盘事件keydown
+说明：keydown事件发生在键盘的键被按下的时候。 <br />
+原生js中判断按下了哪个键是存在兼容性的： <br />
+- IE 只有keyCode属性
+- Firefox 有which和charCode属性
+- Opera 有keyCode和which属性 <br />
+但是jQuery已经解决了这个问题，可通过.which属性和.keyCode属性来确定按下了哪个键： <br />
+arrow left 37 <br />
+arrow  up 38 <br />
+arrow  right 39 <br />
+arrow  down 40 <br />
+
+### 转换Transform
+转换方式： <br />
+- 旋转：rotate transform:rotate(45deg);
+- 缩放：scale transform:scale(2,0.5);
+- 移动：translate transform:translate(100px,-50px);
+- 扭曲：skew transform:skew(45deg,45deg);
+- 矩阵变形：matrix(&lt;number&gt;,&lt;number&gt;,&lt;number&gt;,&lt;number&gt;,&lt;number&gt;,&lt;number&gt;)
+
+### 如何判断浏览器是否支持某个css属性
+实现思路：通过判断某个element的style中是否存在某个css属性 <br />
+实现代码： <br />
+(function(temp) {
+	if(temp.style["transition"] !== undefined) {
+		return true;
+	}
+	return false;
+})(document.createElement("div"));
